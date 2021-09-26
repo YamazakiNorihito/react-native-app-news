@@ -1,11 +1,24 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<View style={styles.itemContainer}></View>
+			<View style={styles.itemContainer}>
+				<View style={styles.leftContainer}>
+					<Image
+						style={{ width: 100, height: 100 }}
+						source={{ uri: "https://unsplash.it/630/400" }}
+					/>
+				</View>
+				<View style={styles.rightContainer}>
+					<Text numberOfLines={3} style={styles.text}>
+						田村憲久厚生労働相は26日のNHK番組で、今月30日を期限とする新型コロナウイルス対応の緊急事態宣言の解除について「この状況でいけば実現できると思っている」と述べ、改めて可能性が高いと強調した。
+					</Text>
+					<Text style={styles.subText}>React News</Text>
+				</View>
+			</View>
 		</View>
 	);
 }
@@ -22,5 +35,22 @@ const styles = StyleSheet.create({
 		width: "100%",
 		borderColor: "gray",
 		borderWidth: 1,
+		flexDirection: "row",
+	},
+	leftContainer: {
+		width: 100,
+	},
+	rightContainer: {
+		flex: 1,
+		flexDirection: "column",
+		padding: 10,
+		justifyContent: "space-between",
+	},
+	text: {
+		fontSize: 16,
+	},
+	subText: {
+		fontSize: 12,
+		color: "gray",
 	},
 });
