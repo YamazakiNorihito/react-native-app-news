@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 const URL = `https://newsapi.org/v2/top-headlines?country=jp&category=business&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -39,6 +39,7 @@ export default function HomeScreen() {
             imageUrl={item.urlToImage}
             title={item.title}
             author={item.author}
+            onPress={() => navigation.navigate('Article', { article: item })}
           />
         )}
         keyExtractor={(item, index) => index.toString()}
