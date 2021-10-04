@@ -34,3 +34,12 @@ $ expo start -c   # キャッシュクリア
 - Expo を使ったプロジェクトから Expo を使わないプロジェクトにする場合、"eject" で変換する（逆はできない
 
 
+### publish
+
+#### 社内用
+```bash
+expo publish
+```
+
+#### ios
+https://www.e-agency.co.jp/column/sm_app_20190905.html
